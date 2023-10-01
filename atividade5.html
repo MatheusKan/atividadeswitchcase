@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+</head>
+
+<body>
+    <div id="resultado"></div>
+    <script>
+        /*5. Faça um algoritmo para ler uma data(por exemplo, 12/02/2000) e imprima o dia, o
+        nome do mês e o ano(por exemplo, 12 de fevereiro de 2000)*/
+        let data = prompt("Digite a data(Exemplo 12/12/2012): ")
+        let nomeMes = ""
+        let resultado = ""
+        let partes = data.split("/")
+        let dia = parseInt(partes[0])
+        let mes = parseInt(partes[1])
+        let ano = parseInt(partes[2])
+        switch (mes) {
+            case 1:
+                nomeMes = "janeiro";
+                break;
+            case 2:
+                nomeMes = "fevereiro";
+                break;
+            case 3:
+                nomeMes = "março";
+                break;
+            case 4:
+                nomeMes = "abril";
+                break;
+            case 5:
+                nomeMes = "maio";
+                break;
+            case 6:
+                nomeMes = "junho";
+                break;
+            case 7:
+                nomeMes = "julho";
+                break;
+            case 8:
+                nomeMes = "agosto";
+                break;
+            case 9:
+                nomeMes = "setembro";
+                break;
+            case 10:
+                nomeMes = "outubro";
+                break;
+            case 11:
+                nomeMes = "novembro";
+                break;
+            case 12:
+                nomeMes = "dezembro";
+                break;
+            default:
+                nomeMes = "Mês errado"
+        }
+        if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
+            if (dia >= 1 && dia <= 30) 
+                resultado = dia + " de " + nomeMes + " de " + ano + "."
+             else 
+                resultado = "Dia errado"
+            
+        } else if (mes == 2) {
+            if (dia >= 1 && dia <= 28) 
+                resultado = dia + " de " + nomeMes + " de " + ano + "."
+             else 
+                resultado = "Dia errado"
+            
+        } else if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12){
+            if (dia >= 1 && dia <= 31) 
+                resultado = dia + " de " + nomeMes + " de " + ano + "."
+             else 
+                resultado = "Dia errado"
+            
+        }else{
+            resultado = "Data errada"
+        }
+        document.getElementById("resultado").innerHTML = resultado
+    </script>
+</body>
+
+</html>

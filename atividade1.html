@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+</head>
+
+<body>
+    <span id="resultado">Resultado: </span><br>
+    <span id="notas">Notas: </span>
+    <script>
+        /*Crie os algoritmos para os itens a seguir, representando-os em JavaScript e fluxograma.
+        1. Sobre um aluno e suas notas.
+        a) Leia o nome do aluno.
+        b) Leia três notas do aluno e faça a média aritmética entre elas.
+        c) Verifique se o aluno foi aprovado (média maior ou igual a 6,0). Depois, imprima a
+        mensagem "O aluno <nome do aluno> foi aprovado com média <o valor da média>".
+        d) Verifique se o aluno foi reprovado (média inferior a 6,0). Depois, imprima a
+        mensagem "O aluno <nome do aluno> foi reprovado com média <o valor da média>".
+        e) Coloque as três notas do aluno em ordem decrescente.*/
+        let nome = prompt("Digite o nome do aluno: ")
+        let nota1 = Number(prompt("Digite a primeira nota: "));
+        let nota2 = Number(prompt("Digite a segunda nota: "));
+        let nota3 = Number(prompt("Digite a terceira nota: "));
+        let media = (nota1 + nota2 + nota3) / 3;
+        let desempenho = "";
+        let notas = ""
+        if (media >= 6.0 && media < 11)
+            desempenho = "O(A) aluno(a) " + nome + " foi aprovado(a) com média " + media.toFixed(2) + "."
+        else if (media < 6 && media >= 0)
+            desempenho = "O(A) aluno(a) " + nome + " foi reprovado(a) com média " + media.toFixed(2) + "."
+        else {
+            desempenho = "Valor da Média errado"
+        }
+        document.getElementById("resultado").innerHTML = desempenho;
+
+        switch (true) {
+            case nota1 < nota2 && nota1 < nota3 && nota2 < nota3:
+                notas = nota3 + " " + nota2 + " " + nota1 + "."
+                break;
+            case nota2 > nota1 && nota2 > nota3 && nota1 > nota3:
+                notas = nota2 + " " + nota1 + " " + nota3 + "."
+                break;
+            case nota3 > nota1 && nota3 > nota2 && nota2 > nota1:
+                notas = nota3 + " " + nota2 + " " + nota1 + "."
+                break;
+            case nota3 == nota1 && nota3 == nota2:
+                notas = nota3 + " " + nota2 + " " + nota1 + "."
+                break;
+            case nota3 == nota1 && nota3 > nota2:
+                notas = nota3 + " " + nota1 + " " + nota2 + "."
+                break;
+            case nota2 == nota1 && nota2 < nota3:
+                notas = nota3 + " " + nota1 + " " + nota2 + "."
+                break;
+            case nota3 == nota1 && nota3 < nota2:
+                notas = nota2 + " " + nota1 + " " + nota3 + "."
+                break;
+            case nota3 == nota2 && nota3 < nota1:
+                notas = nota1 + " " + nota2 + " " + nota3 + "."
+                break;
+            case nota1 > nota2 && nota3 > nota1 && nota3 > nota2:
+                notas = nota3 + " " + nota1 + " " + nota2 + "."
+                break;
+            case nota3 == nota2 && nota1 < nota3:
+                notas = nota2 + " " + nota3 + " " + nota1 + "."
+                break;
+            case nota1 > nota2 && nota1 > nota3 && nota2 > nota3:
+                notas = nota1 + " " + nota2 + " " + nota3 + "."
+                break;
+            case nota1 > nota2 && nota1 > nota3 && nota2 < nota3:
+                notas = nota1 + " " + nota3 + " " + nota2 + "."
+                break;
+            case nota1 == nota2 && nota2 < nota3:
+                notas = nota2 + " " + nota1 + " " + nota3 + "."
+                break;
+            case nota1 < nota2 && nota1 < nota3 && nota2 > nota3:
+                notas = nota2 + " " + nota3 + " " + nota1 + "."
+                break;
+            default:
+                notas = "erro"
+                break;
+
+        }
+        document.getElementById("notas").innerHTML = notas
+    </script>
+</body>
+
+</html>
