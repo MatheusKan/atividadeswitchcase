@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+
+<body>
+    <div id="resultado"></div>
+    <script>
+        //3. Leia o pedido de um cliente de fast food, baseado no menu a seguir, e depois imprima
+        //o preço e a opção que ele escolher.
+        let pedido = Number(prompt("Digite o número do pedido: "))
+        let resultado = ""
+        switch (pedido) {
+            case 1:
+                resultado = "Número da opção: " + pedido + "<br>" + " Promoção: Big Super Sanduba" + "<br>" + "Específicação: 2 hambúrgeres, queijo, batata frita e refrigerante" + "<br>" + "Preço: R$ 5,00"
+                break;
+            case 2:
+                resultado = "Número da opção: " + pedido + "<br>" + " Promoção: Quase Super Sanduba" + "<br>" + "Específicação: 1 hambúrger, batata frita e refrigerante" + "<br>" + "Preço: R$ 3,00"
+                break;
+            case 3:
+                resultado = "Número da opção: " + pedido + "<br>" + " Promoção: Mirradus" + "<br>" + "Específicação: 1 misto quente e refrigerante" + "<br>" + "Preço: R$ 1,50"
+                break;
+            default:
+                resultado = "Opção errada"
+                break;
+        }
+        document.getElementById("resultado").innerHTML = resultado
+    </script>
+</body>
+
+</html>
