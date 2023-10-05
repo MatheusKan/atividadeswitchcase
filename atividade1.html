@@ -5,11 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 1</title>
+    <style>
+        h1,
+        div {
+            color: green;
+            font-size: 30px;
+            font-family: "Comic Sans MS";
+            text-align: center;
+        }
+
+        body {
+            background-color: yellow;
+        }
+    </style>
 </head>
 
 <body>
-    <span id="resultado">Resultado: </span><br>
-    <span id="notas">Notas: </span>
+    <div>
+        <h1><strong>Aluno e suas notas</strong></h1>
+        <span id="resultado">Resultado: </span><br>
+        <span id="notas">Notas: </span>
+    </div>
     <script>
         /*Crie os algoritmos para os itens a seguir, representando-os em JavaScript e fluxograma.
         1. Sobre um aluno e suas notas.
@@ -26,65 +42,23 @@
         let nota3 = Number(prompt("Digite a terceira nota: "));
         let media = (nota1 + nota2 + nota3) / 3;
         let desempenho = "";
-        let notas = ""
-        if (media >= 6.0 && media < 11)
+
+
+        if (media >= 6 && media <= 10)
             desempenho = "O(A) aluno(a) " + nome + " foi aprovado(a) com média " + media.toFixed(2) + "."
         else if (media < 6 && media >= 0)
             desempenho = "O(A) aluno(a) " + nome + " foi reprovado(a) com média " + media.toFixed(2) + "."
-        else {
-            desempenho = "Valor da Média errado"
-        }
-        document.getElementById("resultado").innerHTML = desempenho;
 
-        switch (true) {
-            case nota1 < nota2 && nota1 < nota3 && nota2 < nota3:
-                notas = nota3 + " " + nota2 + " " + nota1 + "."
-                break;
-            case nota2 > nota1 && nota2 > nota3 && nota1 > nota3:
-                notas = nota2 + " " + nota1 + " " + nota3 + "."
-                break;
-            case nota3 > nota1 && nota3 > nota2 && nota2 > nota1:
-                notas = nota3 + " " + nota2 + " " + nota1 + "."
-                break;
-            case nota3 == nota1 && nota3 == nota2:
-                notas = nota3 + " " + nota2 + " " + nota1 + "."
-                break;
-            case nota3 == nota1 && nota3 > nota2:
-                notas = nota3 + " " + nota1 + " " + nota2 + "."
-                break;
-            case nota2 == nota1 && nota2 < nota3:
-                notas = nota3 + " " + nota1 + " " + nota2 + "."
-                break;
-            case nota3 == nota1 && nota3 < nota2:
-                notas = nota2 + " " + nota1 + " " + nota3 + "."
-                break;
-            case nota3 == nota2 && nota3 < nota1:
-                notas = nota1 + " " + nota2 + " " + nota3 + "."
-                break;
-            case nota1 > nota2 && nota3 > nota1 && nota3 > nota2:
-                notas = nota3 + " " + nota1 + " " + nota2 + "."
-                break;
-            case nota3 == nota2 && nota1 < nota3:
-                notas = nota2 + " " + nota3 + " " + nota1 + "."
-                break;
-            case nota1 > nota2 && nota1 > nota3 && nota2 > nota3:
-                notas = nota1 + " " + nota2 + " " + nota3 + "."
-                break;
-            case nota1 > nota2 && nota1 > nota3 && nota2 < nota3:
-                notas = nota1 + " " + nota3 + " " + nota2 + "."
-                break;
-            case nota1 == nota2 && nota2 < nota3:
-                notas = nota2 + " " + nota1 + " " + nota3 + "."
-                break;
-            case nota1 < nota2 && nota1 < nota3 && nota2 > nota3:
-                notas = nota2 + " " + nota3 + " " + nota1 + "."
-                break;
-            default:
-                notas = "erro"
-                break;
+        else
+            desempenho = "Valor da média errado";
 
-        }
-        document.getElementById("notas").innerHTML = notas
+
+        document.getElementById("resultado").innerHTML = desempenho
+
+        let notasOrdenadas = [nota1, nota2, nota3];
+        notasOrdenadas.sort((a, b) => b - a);
+
+        document.getElementById("notas").innerHTML = notasOrdenadas
     </script>
 </body>
 

@@ -5,68 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1kgs0">
     <title>Atividade 2</title>
+    <style>
+    h1, div{
+        color: green;
+        font-size: 30px;
+        font-family: "Comic Sans MS";
+        text-align: center;
+    }
+    body{
+        background-color: yellow;
+    }
+
+</style>
 </head>
 
 <body>
+    <h1>Pesos</h1>
     <div id="resultado"></div>
     <script>
         /*2. Leia três nomes de pessoas e seus pesos. Depois, imprima os dados (nome e peso) em
         ordem decrescente de peso*/
         let nome1 = prompt("Digite o primeiro nome: ")
-        let peso1 = Number(prompt("Digite o peso da primeira pessoa"))
+        let p1 = Number(prompt("Digite o peso da primeira pessoa"))
         let nome2 = prompt("Digite o segundo nome: ")
-        let peso2 = Number(prompt("Digite o peso da segunda pessoa"))
+        let p2 = Number(prompt("Digite o peso da segunda pessoa"))
         let nome3 = prompt("Digite o terceiro nome: ")
-        let peso3 = Number(prompt("Digite o peso da terceira pessoa"))
+        let p3 = Number(prompt("Digite o peso da terceira pessoa"))
         let resultado = ""
+
         switch (true) {
-            case peso1 < peso2 && peso1 < peso3 && peso2 < peso3:
-                resultado = "Nome: "+ nome3 + " " + peso3 + " kgs"+ "<br>"+ " Nome: "+ nome2 + " " + peso2 +" kgs"+  "<br>" + " Nome: " + nome1 + " " + peso1 + " kgs"
+
+            case p1 >= p2 && p2 >= p3:
+                resultado = "Nome: " + nome1 + " Peso: " + p1 + " kgs" + "<br>" + "Nome: " + nome2 + " Peso: " + p2 + " kgs" + "<br>" + "Nome: " + nome3 + " Peso: " + p3 + " kgs"
                 break;
-            case peso2 > peso1 && peso2 > peso3 && peso1 > peso3:
-                resultado = "Nome: "+ nome2 + " " + peso2 +" kgs"+ "<br>"+ " Nome: "+ nome1 + " " + peso1 +" kgs"+  "<br>" + " Nome: " + nome3 + " " + peso3 + " kgs"
+            case p1 >= p3 && p3 >= p2:
+                resultado = "Nome: " + nome1 + " Peso: " + p1 + " kgs" + "<br>" + "Nome: " + nome3 + " Peso: " + p3 + " kgs" + "<br>" + "Nome: " + nome2 + " Peso: " + p2 + " kgs"
                 break;
-            case peso3 > peso1 && peso3 > peso2 && peso2 > peso1:
-                resultado = "Nome: "+ nome3 + " " + peso3 +" kgs"+ "<br>"+ " Nome: "+ nome2 + " " + peso2 +" kgs"+  "<br>" + " Nome: " + nome1 + " " + peso1 + " kgs"
+            case p2 >= p1 && p1 >= p3:
+                resultado = "Nome: " + nome2 + " Peso: " + p2 + " kgs" + "<br>" + "Nome: " + nome1 + " Peso: " + p1 + " kgs" + "<br>" + "Nome: " + nome3 + " Peso: " + p3 + " kgs"
                 break;
-            case peso3 == peso1 && peso3 == peso2:
-                resultado = "Nome: "+ nome3 + " " + peso3 +" kgs"+ "<br>"+ " Nome: "+ nome2 + " " + peso2 +" kgs"+  "<br>" + " Nome: " + nome1 + " " + peso1 + " kgs"
+            case p2 >= p3 && p3 >= p1:
+                resultado = "Nome: " + nome2 + " Peso: " + p2 + " kgs" + "<br>" + "Nome: " + nome3 + " Peso: " + p3 + " kgs" + "<br>" + "Nome: " + nome1 + " Peso: " + p1 + " kgs"
                 break;
-            case peso3 == peso1 && peso3 > peso2:
-                resultado = "Nome: "+ nome3 + " " + peso3 +" kgs"+ "<br>"+ " Nome: "+ nome1 + " " + peso1 +" kgs"+  "<br>" + " Nome: " + nome2 + " " + peso2 + " kgs"
+            case p3 >= p2 && p2 >= p1:
+                resultado = "Nome: " + nome3 + " Peso: " + p3 + " kgs" + "<br>" + "Nome: " + nome2 + " Peso: " + p2 + " kgs" + "<br>" + "Nome: " + nome1 + " Peso: " + p1 + " kgs"
                 break;
-            case peso2 == peso1 && peso2 < peso3:
-                resultado = "Nome: "+ nome3 + " " + peso3 +" kgs"+ "<br>"+ " Nome: "+ nome1 + " " + peso1 +" kgs"+  "<br>" + " Nome: " + nome2 + " " + peso2 + " kgs"
-                break;
-            case peso3 == peso1 && peso3 < peso2:
-                resultado = "Nome: "+ nome2 + " " + peso2 +" kgs"+ "<br>"+ " Nome: "+ nome1 + " " + peso1 +" kgs"+  "<br>" + " Nome: " + nome3 + " " + peso3 + " kgs"
-                break;
-            case peso3 == peso2 && peso3 < peso1:
-                resultado = "Nome: "+ nome1 + " " + peso1 +" kgs"+ "<br>"+ " Nome: "+ nome2 + " " + peso2 +" kgs"+  "<br>" + " Nome: " + nome3 + " " + peso3 + " kgs"
-                break;
-            case peso1 > peso2 && peso3 > peso1 && peso3 > peso2:
-                resultado = "Nome: "+ nome3 + " " + peso3 +" kgs"+ "<br>"+ " Nome: "+ nome1 + " " + peso1 +" kgs"+  "<br>" + " Nome: " + nome2 + " " + peso2 + " kgs"
-                break;
-            case peso3 == peso2 && peso1 < peso3:
-                resultado = "Nome: "+ nome2 + " " + peso2 +" kgs"+ "<br>"+ " Nome: "+ nome3 + " " + peso3 +" kgs"+  "<br>" + " Nome: " + nome1 + " " + peso1 + " kgs"
-                break;
-            case peso1 > peso2 && peso1 > peso3 && peso2 > peso3:
-                resultado = "Nome: "+ nome1 + " " + peso1 +" kgs"+ "<br>"+ " Nome: "+ nome2 + " " + peso2 +" kgs"+  "<br>" + " Nome: " + nome3 + " " + peso3 + " kgs"
-                break;
-            case peso1 > peso2 && peso1 > peso3 && peso2 < peso3:
-                resultado = "Nome: "+ nome1 + " " + peso1 +" kgs"+ "<br>"+ " Nome: "+ nome3 + " " + peso3 +" kgs"+  "<br>" + " Nome: " + nome2 + " " + peso2 + " kgs"
-                break;
-            case peso1 == peso2 && peso2 < peso3:
-                resultado = "Nome: "+ nome2 + " " + peso2 +" kgs"+ "<br>"+ " Nome: "+ nome1 + " " + peso1 +" kgs"+  "<br>" + " Nome: " + nome3 + " " + peso3 + " kgs"
-                break;
-            case peso1 < peso2 && peso1 < peso3 && peso2 > peso3:
-                resultado = "Nome: "+ nome2 + " " + peso2 +" kgs"+ "<br>"+ " Nome: "+ nome3 + " " + peso3 +" kgs"+  "<br>" + " Nome: " + nome1 + " " + peso1 + " kgs"
+            case p3 >= p1 && p1 >= p2:
+                resultado = "Nome: " + nome3 + " Peso: " + p3 + " kgs" + "<br>" + "Nome: " + nome1 + " Peso: " + p1 + " kgs" + "<br>" + "Nome: " + nome2 + " Peso: " + p2 + " kgs"
                 break;
             default:
-                resultado = "erro"
+                "Nomes e Pesos Desconhecidos";
                 break;
-
         }
+
         document.getElementById("resultado").innerHTML = resultado
     </script>
 </body>
